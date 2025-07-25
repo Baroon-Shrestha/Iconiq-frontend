@@ -45,8 +45,6 @@ export default function App() {
         <div className="">
           <Toaster position="top-center" />
           <ScrollToTop />
-
-          {/* ✅ Render Chat2 only if NOT admin */}
           {!admin && <Chat2 />}
 
           <Nav />
