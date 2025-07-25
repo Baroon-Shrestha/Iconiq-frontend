@@ -4,7 +4,7 @@ import { Editor } from "@tinymce/tinymce-react";
 import CreatableSelect from "react-select/creatable";
 import makeAnimated from "react-select/animated";
 import { useAuth } from "../Context/AuthContext";
-import { REDNDER_URL } from "../../url";
+import { REDNDER_URL } from "../../../url";
 
 export default function BlogForm() {
   const { admin } = useAuth();

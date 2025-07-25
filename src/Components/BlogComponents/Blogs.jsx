@@ -17,7 +17,7 @@ import {
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/AuthContext";
-import { REDNDER_URL } from "../../url";
+import { REDNDER_URL } from "../../../url";
 
 const categories = [
   "All",

@@ -9,7 +9,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 import axios from "axios";
-import { REDNDER_URL } from "../../url";
+import { REDNDER_URL } from "../../../url";
 
 export default function LoginDialog({ onLogin }) {
   const [username, setUsername] = useState("");

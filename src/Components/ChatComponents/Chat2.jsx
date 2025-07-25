@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { MessageCircle, X, Send } from "lucide-react";
 import axios from "axios";
 import { socket } from "../../../socket";
-import { REDNDER_URL } from "../../url";
+import { REDNDER_URL } from "../../../url";
 
 const sessionId = localStorage.getItem("sessionId") || Date.now().toString();
 localStorage.setItem("sessionId", sessionId);

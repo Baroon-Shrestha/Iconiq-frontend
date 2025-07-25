@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import axios from "axios";
 import { socket } from "../../../socket";
-import { REDNDER_URL } from "../../url";
+import { REDNDER_URL } from "../../../url";
 
 export default function ChatBox() {
   const [sessions, setSessions] = useState([]);

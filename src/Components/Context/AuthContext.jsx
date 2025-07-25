@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { REDNDER_URL } from "../../url";
+import { REDNDER_URL } from "../../../url";
 
 const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {

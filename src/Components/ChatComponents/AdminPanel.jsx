@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { REDNDER_URL } from "../../url";
+import { REDNDER_URL } from "../../../url";
 
 export default function AdminPanel() {
   const [messages, setMessages] = useState([]);

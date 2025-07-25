@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../Context/AuthContext";
 import { useNavigate } from "react-router-dom"; // ← import
-import { REDNDER_URL } from "../../url";
+import { REDNDER_URL } from "../../../url";
 
 export default function AdminLogin() {
   const { admin, login, logout } = useAuth(); // use global auth state
