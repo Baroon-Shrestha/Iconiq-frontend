@@ -48,7 +48,6 @@ export default function App() {
           {!admin && <Chat2 />}
 
           <Nav />
-
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
