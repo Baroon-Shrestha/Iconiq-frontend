@@ -2,7 +2,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
-import { API_URL } from "../../url";
+import { REDNDER_URL } from "../../url";
 
 const AuthContext = createContext();
 
@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const fetchAdmin = async () => {
       try {
-        const res = await axios.get(`${API_URL}/admin/me`, {
+        const res = await axios.get(`${REDNDER_URL}/admin/me`, {
           withCredentials: true,
         });
         setAdmin(res.data);
@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     await axios.post(
-      `${API_URL}/admin/logout`,
+      `${REDNDER_URL}/admin/logout`,
       {},
       {
         withCredentials: true,

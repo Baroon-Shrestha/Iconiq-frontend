@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import axios from "axios";
 import { socket } from "../../../socket";
-import { API_URL } from "../../url";
+import { REDNDER_URL } from "../../url";
 
 export default function ChatBox() {
   const [sessions, setSessions] = useState([]);
@@ -23,7 +23,7 @@ export default function ChatBox() {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/admin/usernames`, { withCredentials: true })
+      .get(`${REDNDER_URL}/admin/usernames`, { withCredentials: true })
       .then((res) => setSessions(res.data))
       .catch((err) => console.error("Failed to fetch usernames", err));
   }, []);
@@ -32,7 +32,7 @@ export default function ChatBox() {
     if (!selectedSession) return;
 
     axios
-      .get(`${API_URL}/admin/session/${selectedSession}`)
+      .get(`${REDNDER_URL}/admin/session/${selectedSession}`)
       .then((res) =>
         setAllMessages((prev) => ({
           ...prev,

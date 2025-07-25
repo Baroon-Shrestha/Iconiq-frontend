@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { API_URL } from "../../url";
+import { REDNDER_URL } from "../../url";
 
 export default function AdminPanel() {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/admin/getmessages`, { withCredentials: true })
+      .get(`${REDNDER_URL}/admin/getmessages`, { withCredentials: true })
       .then((res) => {
         setMessages(res.data);
       });

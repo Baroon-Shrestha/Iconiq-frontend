@@ -23,7 +23,7 @@ import BlogDescription from "./Components/BlogComponents/BlogDescription";
 import BlogMarkdownForm from "./Components/BlogComponents/BlogMarkdownForm";
 import Policy from "./Pages/Policy";
 import { useAuth } from "./Components/Context/AuthContext";
-import { API_URL } from "./url";
+import { REDNDER_URL } from "./url";
 
 export default function App() {
   const [adminState, setAdminState] = useState(null);
@@ -32,7 +32,7 @@ export default function App() {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/admin/me`, { withCredentials: true })
+      .get(`${REDNDER_URL}/admin/me`, { withCredentials: true })
       .then((res) => {
         setAdminState(res.data.username);
       })

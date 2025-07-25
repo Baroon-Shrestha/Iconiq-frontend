@@ -4,7 +4,7 @@ import { Editor } from "@tinymce/tinymce-react";
 import CreatableSelect from "react-select/creatable";
 import makeAnimated from "react-select/animated";
 import { useAuth } from "../Context/AuthContext";
-import { API_URL } from "../../url";
+import { REDNDER_URL } from "../../url";
 
 export default function BlogForm() {
   const { admin } = useAuth();
@@ -61,7 +61,7 @@ export default function BlogForm() {
     }
 
     try {
-      const res = await axios.post(`${API_URL}/blog/post-blog`, form, {
+      const res = await axios.post(`${REDNDER_URL}/blog/post-blog`, form, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -76,7 +76,7 @@ export default function BlogForm() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axios.get(`${API_URL}/blog/categories`);
+        const res = await axios.get(`${REDNDER_URL}/blog/categories`);
         const categoryOptions = res.data.categories.map((cat) => ({
           value: cat,
           label: cat,

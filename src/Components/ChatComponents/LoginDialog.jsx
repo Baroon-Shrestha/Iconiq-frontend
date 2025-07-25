@@ -9,7 +9,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 import axios from "axios";
-import { API_URL } from "../../url";
+import { REDNDER_URL } from "../../url";
 
 export default function LoginDialog({ onLogin }) {
   const [username, setUsername] = useState("");
@@ -31,7 +31,7 @@ export default function LoginDialog({ onLogin }) {
     try {
       // Simulate API call - replace with your actual axios call
       const res = await axios.post(
-        `${API_URL}/admin/login`,
+        `${REDNDER_URL}/admin/login`,
         { username, password },
         { withCredentials: true }
       );

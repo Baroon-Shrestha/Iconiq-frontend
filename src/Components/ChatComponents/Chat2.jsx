@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { MessageCircle, X, Send } from "lucide-react";
 import axios from "axios";
 import { socket } from "../../../socket";
-import { API_URL } from "../../url";
+import { REDNDER_URL } from "../../url";
 
 const sessionId = localStorage.getItem("sessionId") || Date.now().toString();
 localStorage.setItem("sessionId", sessionId);
@@ -21,7 +21,7 @@ export default function Chat2() {
 
   const saveUsername = async (newName) => {
     try {
-      await axios.post(`${API_URL}/admin/save-session`, {
+      await axios.post(`${REDNDER_URL}/admin/save-session`, {
         sessionId,
         username: newName,
       });
@@ -43,7 +43,7 @@ export default function Chat2() {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/admin/session/${sessionId}`)
+      .get(`${REDNDER_URL}/admin/session/${sessionId}`)
       .then((res) => {
         setMessages(res.data);
         setLoading(false);

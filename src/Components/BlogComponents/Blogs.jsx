@@ -17,7 +17,7 @@ import {
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/AuthContext";
-import { API_URL } from "../../url";
+import { REDNDER_URL } from "../../url";
 
 const categories = [
   "All",
@@ -42,8 +42,8 @@ export default function Blogs() {
     const fetchBlogs = async () => {
       try {
         const endpoint = admin
-          ? `${API_URL}/blog/all-blog`
-          : `${API_URL}/blog/blogs`;
+          ? `${REDNDER_URL}/blog/all-blog`
+          : `${REDNDER_URL}/blog/blogs`;
         const res = await axios.get(endpoint, { withCredentials: true });
         setBlogs(res.data.blogs || []);
         setFilteredBlogs(res.data.blogs || []);
@@ -54,7 +54,7 @@ export default function Blogs() {
 
     const fetchCategories = async () => {
       try {
-        const res = await axios.get(`${API_URL}/blog/categories`, {
+        const res = await axios.get(`${REDNDER_URL}/blog/categories`, {
           withCredentials: true,
         });
         setCategories(["All", ...(res.data.categories || [])]);
@@ -109,7 +109,7 @@ export default function Blogs() {
     setDropdownOpen(null);
     try {
       await axios.patch(
-        `${API_URL}/blog/update-status/${blogId}`,
+        `${REDNDER_URL}/blog/update-status/${blogId}`,
         { isPublished: !currentStatus },
         { withCredentials: true }
       );
@@ -136,7 +136,7 @@ export default function Blogs() {
 
     if (window.confirm("Are you sure you want to delete this blog?")) {
       try {
-        await axios.delete(`${API_URL}/blog/delete/${blogId}`, {
+        await axios.delete(`${REDNDER_URL}/blog/delete/${blogId}`, {
           withCredentials: true,
         });
 
