@@ -36,7 +36,7 @@ export default function Blogs() {
   const [categories, setCategories] = useState(["All"]);
   const navigate = useNavigate();
   const { admin } = useAuth();
-  const API_URL = import.meta.env.VITE_API_URL;
+  const API_URL = import.meta.env.RENDER_URL;
 
   useEffect(() => {
     const fetchBlogs = async () => {

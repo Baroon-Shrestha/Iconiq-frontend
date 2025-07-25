@@ -5,7 +5,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [admin, setAdmin] = useState(null);
   const [loading, setLoading] = useState(true);
-  const API_URL = import.meta.env.VITE_API_URL;
+  const API_URL = import.meta.env.RENDER_URL;
   useEffect(() => {
     const fetchAdmin = async () => {
       try {

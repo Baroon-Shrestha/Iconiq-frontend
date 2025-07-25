@@ -18,7 +18,7 @@ export default function BlogForm() {
   const [allCategories, setAllCategories] = useState([]);
   const [heroImage, setHeroImage] = useState(null);
   const [message, setMessage] = useState("");
-  const API_URL = import.meta.env.VITE_API_URL;
+  const API_URL = import.meta.env.RENDER_URL;
 
   const handleEditorChange = (content) => {
     setFormData((prev) => ({ ...prev, content }));

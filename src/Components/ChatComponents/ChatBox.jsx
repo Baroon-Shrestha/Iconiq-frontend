@@ -19,7 +19,7 @@ export default function ChatBox() {
   const [text, setText] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
-  const API_URL = import.meta.env.VITE_API_URL;
+  const API_URL = import.meta.env.RENDER_URL;
   useEffect(() => {
     axios
       .get(`${API_URL}/admin/usernames`, { withCredentials: true })

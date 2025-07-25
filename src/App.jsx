@@ -28,7 +28,7 @@ export default function App() {
   const [adminState, setAdminState] = useState(null);
   const { admin } = useAuth(); // ✅ get admin from AuthContext
   const location = useLocation();
-  const API_URL = import.meta.env.VITE_API_URL;
+  const API_URL = import.meta.env.RENDER_URL;
 
   useEffect(() => {
     axios
