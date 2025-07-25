@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../Context/AuthContext";
 import { useNavigate } from "react-router-dom"; // ← import
+import { API_URL } from "../../url";
 
 export default function AdminLogin() {
   const { admin, login, logout } = useAuth(); // use global auth state
@@ -11,7 +12,7 @@ export default function AdminLogin() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const API_URL = import.meta.env.RENDER_URL;
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");

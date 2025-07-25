@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { API_URL } from "../../url";
 
 export default function AdminPanel() {
   const [messages, setMessages] = useState([]);
-  const API_URL = import.meta.env.RENDER_URL;
+
   useEffect(() => {
     axios
       .get(`${API_URL}/admin/getmessages`, { withCredentials: true })

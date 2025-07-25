@@ -23,12 +23,12 @@ import BlogDescription from "./Components/BlogComponents/BlogDescription";
 import BlogMarkdownForm from "./Components/BlogComponents/BlogMarkdownForm";
 import Policy from "./Pages/Policy";
 import { useAuth } from "./Components/Context/AuthContext";
+import { API_URL } from "./url";
 
 export default function App() {
   const [adminState, setAdminState] = useState(null);
   const { admin } = useAuth(); // ✅ get admin from AuthContext
   const location = useLocation();
-  const API_URL = import.meta.env.RENDER_URL;
 
   useEffect(() => {
     axios

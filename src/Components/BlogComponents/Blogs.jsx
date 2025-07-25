@@ -17,6 +17,7 @@ import {
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/AuthContext";
+import { API_URL } from "../../url";
 
 const categories = [
   "All",
@@ -36,7 +37,6 @@ export default function Blogs() {
   const [categories, setCategories] = useState(["All"]);
   const navigate = useNavigate();
   const { admin } = useAuth();
-  const API_URL = import.meta.env.RENDER_URL;
 
   useEffect(() => {
     const fetchBlogs = async () => {

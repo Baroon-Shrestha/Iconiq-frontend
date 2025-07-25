@@ -1,11 +1,12 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { API_URL } from "../../url";
 
 const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [admin, setAdmin] = useState(null);
   const [loading, setLoading] = useState(true);
-  const API_URL = import.meta.env.RENDER_URL;
+
   useEffect(() => {
     const fetchAdmin = async () => {
       try {

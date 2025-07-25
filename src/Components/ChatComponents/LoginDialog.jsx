@@ -9,6 +9,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 import axios from "axios";
+import { API_URL } from "../../url";
 
 export default function LoginDialog({ onLogin }) {
   const [username, setUsername] = useState("");
@@ -17,7 +18,6 @@ export default function LoginDialog({ onLogin }) {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState("");
-  const API_URL = import.meta.env.RENDER_URL;
 
   const login = async () => {
     if (!username.trim() || !password.trim()) {

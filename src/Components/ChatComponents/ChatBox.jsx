@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import axios from "axios";
 import { socket } from "../../../socket";
+import { API_URL } from "../../url";
 
 export default function ChatBox() {
   const [sessions, setSessions] = useState([]);
@@ -19,7 +20,7 @@ export default function ChatBox() {
   const [text, setText] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
-  const API_URL = import.meta.env.RENDER_URL;
+
   useEffect(() => {
     axios
       .get(`${API_URL}/admin/usernames`, { withCredentials: true })

@@ -4,6 +4,7 @@ import { Editor } from "@tinymce/tinymce-react";
 import CreatableSelect from "react-select/creatable";
 import makeAnimated from "react-select/animated";
 import { useAuth } from "../Context/AuthContext";
+import { API_URL } from "../../url";
 
 export default function BlogForm() {
   const { admin } = useAuth();
@@ -18,7 +19,6 @@ export default function BlogForm() {
   const [allCategories, setAllCategories] = useState([]);
   const [heroImage, setHeroImage] = useState(null);
   const [message, setMessage] = useState("");
-  const API_URL = import.meta.env.RENDER_URL;
 
   const handleEditorChange = (content) => {
     setFormData((prev) => ({ ...prev, content }));

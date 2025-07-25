@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { MessageCircle, X, Send } from "lucide-react";
 import axios from "axios";
 import { socket } from "../../../socket";
+import { API_URL } from "../../url";
 
 const sessionId = localStorage.getItem("sessionId") || Date.now().toString();
 localStorage.setItem("sessionId", sessionId);
@@ -11,7 +12,6 @@ export default function Chat2() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(true);
-  const API_URL = import.meta.env.RENDER_URL;
 
   const [username, setUsername] = useState(
     localStorage.getItem("username") || sessionId
