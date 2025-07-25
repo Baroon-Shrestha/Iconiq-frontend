@@ -9,7 +9,6 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [admin, setAdmin] = useState(null);
   const [loading, setLoading] = useState(true);
-
   // Check login status on initial load
   useEffect(() => {
     const fetchAdmin = async () => {
